@@ -11,7 +11,7 @@ import objects.*;
 @RestController
 public class WeatherRestController {
 	
-	private static final String REST_API = "http://openweathermap.org/data/2.5/weather?appid=b6907d289e10d714a6e88b30761fae22&q=";
+	private static final String REST_API = "http://api.openweathermap.org/data/2.5/weather?appid=2a912ba21fc02a146dcf008b3ea87010&q=";
 	
 	@RequestMapping("/rest/weather")
 	public Weather weather(Model model,
