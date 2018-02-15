@@ -1,4 +1,4 @@
-package start;
+package start.controllers;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,18 +8,18 @@ import org.springframework.web.client.RestTemplate;
 import objects.*;
 
 @RestController
-public class CountriesRestController {
+public class CityRestController {
 	
 	private static final String REST_API = "http://openweathermap.org/data/2.5/weather?appid=b6907d289e10d714a6e88b30761fae22&q=Bologna,it";
 	
-    @RequestMapping("/rest/countries")
-    public Countries countries(Model model) {
+    @RequestMapping("/rest/city")
+    public City city(Model model) {
     	
     	RestTemplate restTemplate = new RestTemplate();
         
-        Countries countries = restTemplate.getForObject(REST_API, Countries.class);
+        City city = restTemplate.getForObject(REST_API, City.class);
     	
-        return countries;
+        return city;
     }
 
 }
