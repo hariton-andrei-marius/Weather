@@ -3,11 +3,9 @@ package objects;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class City {
-
-	public int id, cod, visibility;
+public class City
+{
+	public int id, cod, visibility, dt;
 	public String name, base;
-	
-	public City()
-	{}
+	public Object weather, main, coord, wind, clouds, sys;
 }
