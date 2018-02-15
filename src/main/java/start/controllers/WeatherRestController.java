@@ -9,19 +9,19 @@ import org.springframework.web.client.RestTemplate;
 import objects.*;
 
 @RestController
-public class CityRestController {
+public class WeatherRestController {
 	
 	private static final String REST_API = "http://openweathermap.org/data/2.5/weather?appid=b6907d289e10d714a6e88b30761fae22&q=";
 	
-	@RequestMapping("/rest/city")
-	public City city(Model model,
-		@RequestParam(value = "name", required = false, defaultValue = "Bologna,it") String name)
+	@RequestMapping("/rest/weather")
+	public Weather weather(Model model,
+		@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city)
 	{
 		RestTemplate restTemplate = new RestTemplate();
         
-		City city = restTemplate.getForObject(REST_API + name, City.class);
+		Weather weather = restTemplate.getForObject(REST_API + city, Weather.class);
     	
-		return city;
+		return weather;
 	}
 
 }

@@ -6,28 +6,37 @@
 	<meta name="theme-color" content="#3F51B5" />
 	<meta name="description" content="Weather" />
 	<meta name="keywords" content="weather, cities" />
-
+	
 	<title>Weather</title>
-
-    <!-- CSS  -->
+	
+	<!-- Stylesheets  -->
+	<link rel="stylesheet" href="style/reset.css" />
 	<link rel="stylesheet" href="style/basic.css" />
 	<link rel="stylesheet" href="style/custom.css" />
-
-	<!--  Scripts-->
-	<script src="scripts/jquery.js"></script>
-	<script src="scripts/main.js"></script>
 </head>
 <body>
 
 	<header class="head">
 		<nav class="navigation">
-			Weather
+			<a href="#">Weather</a>
+			<ul>
+				<li><a href="#">Link</a></li>
+			</ul>
 		</nav>
 	</header>
 
 	<main class="body">
 		<section class="container">
 			<article></article>
+			
+			<form action="/rest/weather" method="GET">
+				<h3>Current weather data</h3>
+			
+				<label for="city">City</label>
+				<input type="text" id="city" name="city" placeholder="Insert city's name" />
+				
+				<input type="submit" value="Get JSON weather" />
+			</form>
 		</section>
 	</main>
 
@@ -38,6 +47,10 @@
 			</article>
 		</section>
 	</footer>
+
+	<!-- Scripts -->
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/main.js"></script>
 
 </body>
 </html>
