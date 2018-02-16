@@ -6,6 +6,7 @@
 bin/
 build/
 gradle/
+node_modules/
 
 # FILES
 
@@ -16,3 +17,4 @@ mvnw
 pom.xml
 *.bat
 *.cmd
+package.json

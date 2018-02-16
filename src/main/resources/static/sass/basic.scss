@@ -1,0 +1,58 @@
+/* IMPORT */
+
+/* @import 'reset'; */
+
+/* VARIABLES */
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+	font: 100% $font-stack;
+	color: $primary-color;
+}
+
+/* NESTING */
+
+nav {
+	ul {
+		margin: 0;
+	}
+
+	li {
+		color: #333;
+
+		&:hover {
+			color: $primary-color;
+		}
+	}
+}
+
+/* MIXINS */
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+.box {
+	@include border-radius(10px);
+}
+
+/* EXTEND/INHERITANCE */
+
+%message-shared {
+	color: #333;
+}
+
+.success {
+	@extend %message-shared;
+}
+
+/* OPERATORS */
+
+aside[role='complementary'] {
+	width: 300px / 960px * 100%;
+}

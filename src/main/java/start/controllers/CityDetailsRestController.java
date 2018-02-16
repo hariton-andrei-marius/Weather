@@ -19,20 +19,18 @@ public class CityDetailsRestController {
 
 		@RequestParam(value = "city", required = false, defaultValue = "Bologna") String city)
 	{
-		RestTemplate restTemplate = new RestTemplate();
-		
-		Object cityDetails = new Object();
+		Object results = null;
 		
 		try
 		{
-			cityDetails = restTemplate.getForObject(RestApi.getCityDetailsURI(city), Object.class);
+			results = new RestTemplate().getForObject(RestApi.getCityDetailsURI(city), Object.class);
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
-			e.printStackTrace();
+			results = e.getMessage();
 		}
     	
-		return cityDetails;
+		return results;
 	}
 
 }

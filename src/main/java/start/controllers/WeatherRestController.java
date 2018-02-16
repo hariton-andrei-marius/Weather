@@ -19,20 +19,18 @@ public class WeatherRestController {
 
 		@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city)
 	{
-		RestTemplate restTemplate = new RestTemplate();
-        
-		Object weather = new Object();
+		Object results = null;
 		
 		try
 		{
-			weather = restTemplate.getForObject(RestApi.getWeatherURI(city), Object.class);
+			results = new RestTemplate().getForObject(RestApi.getWeatherURI(city), Object.class);
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
-			e.printStackTrace();
+			results = e.getMessage();
 		}
     	
-		return weather;
+		return results;
 	}
 
 }
