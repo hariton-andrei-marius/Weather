@@ -33,7 +33,7 @@ dependencies {
     testCompile("junit:junit")
 }
 
-// Allows to have the resources without
+// Allows to have the extern without
 // pass through the build
 
 bootRun {

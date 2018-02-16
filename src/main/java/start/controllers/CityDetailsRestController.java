@@ -12,27 +12,27 @@ import org.springframework.web.client.RestTemplate;
 import extern.*;
 
 @RestController
-public class WeatherRestController {
+public class CityDetailsRestController {
 	
-	@RequestMapping("/rest/weather")
-	public Object weather(Model model,
+	@RequestMapping("/rest/city_details")
+	public Object cityDetails(Model model,
 
-		@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city)
+		@RequestParam(value = "city", required = false, defaultValue = "Bologna") String city)
 	{
 		RestTemplate restTemplate = new RestTemplate();
-        
-		Object weather = new Object();
+		
+		Object cityDetails = new Object();
 		
 		try
 		{
-			weather = restTemplate.getForObject(RestApi.getWeatherURI(city), Object.class);
+			cityDetails = restTemplate.getForObject(RestApi.getCityDetailsURI(city), Object.class);
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
 			e.printStackTrace();
 		}
     	
-		return weather;
+		return cityDetails;
 	}
 
 }

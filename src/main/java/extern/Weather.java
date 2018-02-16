@@ -1,4 +1,4 @@
-package objects;
+package extern;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
