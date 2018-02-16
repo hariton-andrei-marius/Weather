@@ -1,17 +1,19 @@
 package start.controllers;
 
+import java.net.URISyntaxException;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import api.OpenWeatherMap;
 import objects.*;
 
 @RestController
 public class WeatherRestController {
-	
-	private static final String REST_API = "http://api.openweathermap.org/data/2.5/weather?appid=2a912ba21fc02a146dcf008b3ea87010&q=";
 	
 	@RequestMapping("/rest/weather")
 	public Weather weather(Model model,
@@ -19,7 +21,16 @@ public class WeatherRestController {
 	{
 		RestTemplate restTemplate = new RestTemplate();
         
-		Weather weather = restTemplate.getForObject(REST_API + city, Weather.class);
+		Weather weather = new Weather();
+		
+		try
+		{
+			weather = restTemplate.getForObject(OpenWeatherMap.getURI(city).toString(), Weather.class);
+		}
+		catch (RestClientException | URISyntaxException e)
+		{
+			e.printStackTrace();
+		}
     	
 		return weather;
 	}
