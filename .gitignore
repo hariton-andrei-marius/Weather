@@ -6,6 +6,7 @@
 bin/
 build/
 gradle/
+.sass-cache/
 node_modules/
 
 # FILES

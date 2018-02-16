@@ -1,10 +1,10 @@
 buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.10.RELEASE")
-    }
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.10.RELEASE")
+	}
 }
 
 apply plugin: 'java'
@@ -13,12 +13,12 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 jar {
-    baseName = 'Weather'
-    version =  '0.1.0'
+	baseName = 'Weather'
+	version =  '0.1.0'
 }
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 sourceCompatibility = 1.8
@@ -27,16 +27,20 @@ targetCompatibility = 1.8
 dependencies {
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("org.springframework.boot:spring-boot-devtools")
-    compile("org.springframework.boot:spring-boot-starter")
-    compile("org.springframework:spring-web")
-    compile("com.fasterxml.jackson.core:jackson-databind")
-    testCompile("junit:junit")
+	compile("org.springframework.boot:spring-boot-starter")
+	compile("org.springframework:spring-web")
+	compile("com.fasterxml.jackson.core:jackson-databind")
+	testCompile("junit:junit")
 }
-
-// If "true" allows to have the resources
-// without pass through the build
 
 bootRun {
-	addResources = false
+	addResources = true
 }
 
+sourceSets {
+	main {
+		resources {
+			exclude '**/node_modules/*'
+		}
+	}
+}

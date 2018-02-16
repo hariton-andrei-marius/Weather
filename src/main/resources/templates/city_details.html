@@ -25,33 +25,10 @@
 
 	<main class="body">
 		<section class="container">
-			<article></article>
-			
-			<!-- ONLY FOR TEST -->
-			
-			<form action="/rest/weather" method="GET">
-				<h3>/rest/weather</h3>
-				<input type="text"  name="city" />
-				<input type="submit" value="Get JSON weather" />
-			</form>
-			
-			<form action="/rest/city_details" method="GET">
-				<h3>/rest/city_details</h3>
-				<input type="text" name="city" />
-				<input type="submit" value="Get JSON data" />
-			</form>
-			
-			<form action="/weather" method="GET">
-				<h3>/weather</h3>
-				<input type="text" name="city" />
-				<input type="submit" value="Get weather" />
-			</form>
-			
-			<form action="/city_details" method="GET">
-				<h3>/city_details</h3>
-				<input type="text" name="city" />
-				<input type="submit" value="Get data" />
-			</form>
+			<article>
+				<p th:text="'N. results: ' + ${results.count} + '.'" />
+				<p th:text="'Results: ' + ${results._embedded} + '.'" />
+			</article>
 		</section>
 	</main>
 
