@@ -1,6 +1,14 @@
+/*
+* THIS IS AN
+* EXAMPLE CODE !
+*/
 /* IMPORT */
-/* @import 'reset'; */
 /* VARIABLES */
+/* MIXINS */
+/* EXTEND/INHERITANCE */
+.success {
+  color: #333; }
+
 body {
   font: 100% Helvetica, sans-serif;
   color: #333; }
@@ -21,9 +29,6 @@ nav li {
   border-radius: 10px; }
 
 /* EXTEND/INHERITANCE */
-.success {
-  color: #333; }
-
 /* OPERATORS */
 aside[role='complementary'] {
   width: 31.25%; }
