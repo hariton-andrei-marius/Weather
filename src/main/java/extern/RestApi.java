@@ -19,10 +19,10 @@ public class RestApi
 	public static URI getWeatherURI(String cityToSearch) throws URISyntaxException
 	{
 		return new URI(
-				GLOBAL_SCHEME,
-				WEATHER_AUTHORITY,
-				WEATHER_PATH,
-				WEATHER_QUERY + cityToSearch,
+				ApiConfiguration.getGlobalScheme(),
+				ApiConfiguration.getWeatherAuthority(),
+				ApiConfiguration.getWeatherPath(),
+				ApiConfiguration.getWeatherQuery() + cityToSearch,
 				""
 		);
 	}
@@ -30,10 +30,10 @@ public class RestApi
 	public static URI getCityDetailsURI(String cityToSearch) throws URISyntaxException
 	{
 		return new URI(
-				GLOBAL_SCHEME,
-				CITY_DETAILS_AUTHORITY,
-				CITY_DETAILS_PATH,
-				CITY_DETAILS_QUERY + cityToSearch,
+				ApiConfiguration.getGlobalScheme(),
+				ApiConfiguration.getCityDetailsAuthority(),
+				ApiConfiguration.getCityDetailsPath(),
+				ApiConfiguration.getCityDetailsQuery() + cityToSearch,
 				""
 		);
 	}
