@@ -1,4 +1,4 @@
-package extern;
+package start.services;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.boot.context.properties.ConfigurationProperties;

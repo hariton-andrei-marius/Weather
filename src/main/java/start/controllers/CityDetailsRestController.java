@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import extern.*;
+import start.modules.RestApi;
 
 @RestController
 public class CityDetailsRestController {
