@@ -34,8 +34,9 @@
 				<p th:text="'Weather icon ID: ' + ${results.weather[0].icon} + '.'" />
 				<p th:text="'Weather: ' + ${results.weather[0].main} + '.'" />
 				<p th:text="'Weather descr: ' + ${results.weather[0].description} + '.'" />
-				<p th:text="'Temp min: ' + ${results.main.temp_min} + ' F.'" />
-				<p th:text="'Temp max: ' + ${results.main.temp_max} + ' F.'" />
+				<p th:text="'Temp: ' + ${results.main.temp} + '.'" />
+				<p th:text="'Temp min: ' + ${results.main.temp_min} + '.'" />
+				<p th:text="'Temp max: ' + ${results.main.temp_max} + '.'" />
 				<p th:text="'Humidity: ' + ${results.main.humidity} + '.'" />
 				<p th:text="'Pressure: ' + ${results.main.pressure} + '.'" />
 				<p th:text="'Visibility: ' + ${results.visibility} + '.'" />
