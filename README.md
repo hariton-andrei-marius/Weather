@@ -1,7 +1,7 @@
 Weather
 =======
 
-This application (already in development) uses the REST APIs of https://openweathermap.org and https://teleport.org/
+This application (still in development) uses the REST APIs of https://openweathermap.org and https://teleport.org/
 
 How to build
 =======
